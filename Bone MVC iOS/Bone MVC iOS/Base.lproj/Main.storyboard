@@ -21,7 +21,7 @@
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="intro-bg.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="vbr-ba-dW9">
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                             </imageView>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="skull_and_crossbones.png" translatesAutoresizingMaskIntoConstraints="NO" id="V3T-d8-FBs">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="skull_and_crossbones" translatesAutoresizingMaskIntoConstraints="NO" id="V3T-d8-FBs">
                                 <rect key="frame" x="87" y="178" width="240" height="219"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
@@ -73,6 +73,6 @@
     </scenes>
     <resources>
         <image name="intro-bg.jpg" width="152.8800048828125" height="243.1199951171875"/>
-        <image name="skull_and_crossbones.png" width="300" height="211"/>
+        <image name="skull_and_crossbones" width="300" height="211"/>
     </resources>
 </document>
