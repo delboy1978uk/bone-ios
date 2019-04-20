@@ -13,6 +13,8 @@
 		235589BD226A311C004D4AB3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 235589BC226A311C004D4AB3 /* Assets.xcassets */; };
 		235589C0226A311C004D4AB3 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 235589BE226A311C004D4AB3 /* LaunchScreen.storyboard */; };
 		235589CC226A36FF004D4AB3 /* intro-bg.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 235589CB226A36FF004D4AB3 /* intro-bg.jpg */; };
+		23558A0D226AA3E8004D4AB3 /* apiKey.txt in Resources */ = {isa = PBXBuildFile; fileRef = 23558A0C226AA3E8004D4AB3 /* apiKey.txt */; };
+		23558A0F226AA402004D4AB3 /* apiKey.txt.dist in Resources */ = {isa = PBXBuildFile; fileRef = 23558A0E226AA402004D4AB3 /* apiKey.txt.dist */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +26,8 @@
 		235589BF226A311C004D4AB3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		235589C1226A311C004D4AB3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		235589CB226A36FF004D4AB3 /* intro-bg.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "intro-bg.jpg"; sourceTree = "<group>"; };
+		23558A0C226AA3E8004D4AB3 /* apiKey.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = apiKey.txt; sourceTree = "<group>"; };
+		23558A0E226AA402004D4AB3 /* apiKey.txt.dist */ = {isa = PBXFileReference; lastKnownFileType = text; path = apiKey.txt.dist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -63,6 +67,8 @@
 				235589BE226A311C004D4AB3 /* LaunchScreen.storyboard */,
 				235589C1226A311C004D4AB3 /* Info.plist */,
 				235589CB226A36FF004D4AB3 /* intro-bg.jpg */,
+				23558A0C226AA3E8004D4AB3 /* apiKey.txt */,
+				23558A0E226AA402004D4AB3 /* apiKey.txt.dist */,
 			);
 			path = "Bone MVC iOS";
 			sourceTree = "<group>";
@@ -127,8 +133,10 @@
 			files = (
 				235589C0226A311C004D4AB3 /* LaunchScreen.storyboard in Resources */,
 				235589BD226A311C004D4AB3 /* Assets.xcassets in Resources */,
+				23558A0F226AA402004D4AB3 /* apiKey.txt.dist in Resources */,
 				235589CC226A36FF004D4AB3 /* intro-bg.jpg in Resources */,
 				235589BB226A311B004D4AB3 /* Main.storyboard in Resources */,
+				23558A0D226AA3E8004D4AB3 /* apiKey.txt in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
