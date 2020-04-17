@@ -16,66 +16,23 @@
 		234AC65A2440AF92000D15AD /* RegisterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 234AC6592440AF92000D15AD /* RegisterView.swift */; };
 		234AC65C2440B0EE000D15AD /* SignInView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 234AC65B2440B0EE000D15AD /* SignInView.swift */; };
 		234AC65E2440C8D5000D15AD /* ApiClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 234AC65D2440C8D5000D15AD /* ApiClient.swift */; };
+		234AC67A2440E041000D15AD /* BoneTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 234AC6792440E041000D15AD /* BoneTextField.swift */; };
+		234AC67C2440E224000D15AD /* BoneSecureField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 234AC67B2440E224000D15AD /* BoneSecureField.swift */; };
+		234AC67E2440FA50000D15AD /* AppConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = 234AC67D2440FA50000D15AD /* AppConfig.swift */; };
 /* End PBXBuildFile section */
 
-/* Begin PBXContainerItemProxy section */
-		234AC6692440CA45000D15AD /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 234AC65F2440CA45000D15AD /* OAuthSwift.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = F435027A1A6791B200038A29;
-			remoteInfo = OAuthSwift;
+/* Begin PBXCopyFilesBuildPhase section */
+		234AC6822441116F000D15AD /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
 		};
-		234AC66B2440CA45000D15AD /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 234AC65F2440CA45000D15AD /* OAuthSwift.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = C48B28021AFA598D00C7DEF6;
-			remoteInfo = OAuthSwiftMacOS;
-		};
-		234AC66D2440CA45000D15AD /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 234AC65F2440CA45000D15AD /* OAuthSwift.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = C4B6EE1E1BF74CE300443596;
-			remoteInfo = OAuthSwiftTVOS;
-		};
-		234AC66F2440CA45000D15AD /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 234AC65F2440CA45000D15AD /* OAuthSwift.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = C40890C01C11B37000E3146A;
-			remoteInfo = OAuthSwiftWatchOS;
-		};
-		234AC6712440CA45000D15AD /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 234AC65F2440CA45000D15AD /* OAuthSwift.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = F451E3C5195B8CD80051434C;
-			remoteInfo = OAuthSwiftDemo;
-		};
-		234AC6732440CA45000D15AD /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 234AC65F2440CA45000D15AD /* OAuthSwift.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = C49FD5241AFB5DF500791E1A;
-			remoteInfo = OAuthSwiftMacOSDemo;
-		};
-		234AC6752440CA45000D15AD /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 234AC65F2440CA45000D15AD /* OAuthSwift.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = C4D50DF71BFB693F0053B624;
-			remoteInfo = OAuthSwiftTests;
-		};
-		234AC6772440CA9A000D15AD /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 234AC65F2440CA45000D15AD /* OAuthSwift.xcodeproj */;
-			proxyType = 1;
-			remoteGlobalIDString = F43502791A6791B200038A29;
-			remoteInfo = OAuthSwift;
-		};
-/* End PBXContainerItemProxy section */
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		234AC6422440A45E000D15AD /* Bone iOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Bone iOS.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -89,7 +46,9 @@
 		234AC6592440AF92000D15AD /* RegisterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterView.swift; sourceTree = "<group>"; };
 		234AC65B2440B0EE000D15AD /* SignInView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInView.swift; sourceTree = "<group>"; };
 		234AC65D2440C8D5000D15AD /* ApiClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiClient.swift; sourceTree = "<group>"; };
-		234AC65F2440CA45000D15AD /* OAuthSwift.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = OAuthSwift.xcodeproj; path = ../../OAuthSwift/OAuthSwift.xcodeproj; sourceTree = "<group>"; };
+		234AC6792440E041000D15AD /* BoneTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BoneTextField.swift; sourceTree = "<group>"; };
+		234AC67B2440E224000D15AD /* BoneSecureField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BoneSecureField.swift; sourceTree = "<group>"; };
+		234AC67D2440FA50000D15AD /* AppConfig.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppConfig.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -108,7 +67,7 @@
 			children = (
 				234AC6442440A45E000D15AD /* Bone iOS */,
 				234AC6432440A45E000D15AD /* Products */,
-				234AC65F2440CA45000D15AD /* OAuthSwift.xcodeproj */,
+				234AC67F2441116F000D15AD /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -133,6 +92,9 @@
 				234AC6532440A45F000D15AD /* Info.plist */,
 				234AC64D2440A45F000D15AD /* Preview Content */,
 				234AC65D2440C8D5000D15AD /* ApiClient.swift */,
+				234AC6792440E041000D15AD /* BoneTextField.swift */,
+				234AC67B2440E224000D15AD /* BoneSecureField.swift */,
+				234AC67D2440FA50000D15AD /* AppConfig.swift */,
 			);
 			path = "Bone iOS";
 			sourceTree = "<group>";
@@ -145,18 +107,11 @@
 			path = "Preview Content";
 			sourceTree = "<group>";
 		};
-		234AC6602440CA45000D15AD /* Products */ = {
+		234AC67F2441116F000D15AD /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				234AC66A2440CA45000D15AD /* OAuthSwift.framework */,
-				234AC66C2440CA45000D15AD /* OAuthSwift.framework */,
-				234AC66E2440CA45000D15AD /* OAuthSwift.framework */,
-				234AC6702440CA45000D15AD /* OAuthSwift.framework */,
-				234AC6722440CA45000D15AD /* OAuthSwiftDemo.app */,
-				234AC6742440CA45000D15AD /* OAuthSwiftMacOSDemo.app */,
-				234AC6762440CA45000D15AD /* OAuthSwiftTests.xctest */,
 			);
-			name = Products;
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -169,11 +124,11 @@
 				234AC63E2440A45E000D15AD /* Sources */,
 				234AC63F2440A45E000D15AD /* Frameworks */,
 				234AC6402440A45E000D15AD /* Resources */,
+				234AC6822441116F000D15AD /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
 			dependencies = (
-				234AC6782440CA9A000D15AD /* PBXTargetDependency */,
 			);
 			name = "Bone iOS";
 			productName = "Bone iOS";
@@ -206,70 +161,12 @@
 			mainGroup = 234AC6392440A45E000D15AD;
 			productRefGroup = 234AC6432440A45E000D15AD /* Products */;
 			projectDirPath = "";
-			projectReferences = (
-				{
-					ProductGroup = 234AC6602440CA45000D15AD /* Products */;
-					ProjectRef = 234AC65F2440CA45000D15AD /* OAuthSwift.xcodeproj */;
-				},
-			);
 			projectRoot = "";
 			targets = (
 				234AC6412440A45E000D15AD /* Bone iOS */,
 			);
 		};
 /* End PBXProject section */
-
-/* Begin PBXReferenceProxy section */
-		234AC66A2440CA45000D15AD /* OAuthSwift.framework */ = {
-			isa = PBXReferenceProxy;
-			fileType = wrapper.framework;
-			path = OAuthSwift.framework;
-			remoteRef = 234AC6692440CA45000D15AD /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-		234AC66C2440CA45000D15AD /* OAuthSwift.framework */ = {
-			isa = PBXReferenceProxy;
-			fileType = wrapper.framework;
-			path = OAuthSwift.framework;
-			remoteRef = 234AC66B2440CA45000D15AD /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-		234AC66E2440CA45000D15AD /* OAuthSwift.framework */ = {
-			isa = PBXReferenceProxy;
-			fileType = wrapper.framework;
-			path = OAuthSwift.framework;
-			remoteRef = 234AC66D2440CA45000D15AD /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-		234AC6702440CA45000D15AD /* OAuthSwift.framework */ = {
-			isa = PBXReferenceProxy;
-			fileType = wrapper.framework;
-			path = OAuthSwift.framework;
-			remoteRef = 234AC66F2440CA45000D15AD /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-		234AC6722440CA45000D15AD /* OAuthSwiftDemo.app */ = {
-			isa = PBXReferenceProxy;
-			fileType = wrapper.application;
-			path = OAuthSwiftDemo.app;
-			remoteRef = 234AC6712440CA45000D15AD /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-		234AC6742440CA45000D15AD /* OAuthSwiftMacOSDemo.app */ = {
-			isa = PBXReferenceProxy;
-			fileType = wrapper.application;
-			path = OAuthSwiftMacOSDemo.app;
-			remoteRef = 234AC6732440CA45000D15AD /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-		234AC6762440CA45000D15AD /* OAuthSwiftTests.xctest */ = {
-			isa = PBXReferenceProxy;
-			fileType = wrapper.cfbundle;
-			path = OAuthSwiftTests.xctest;
-			remoteRef = 234AC6752440CA45000D15AD /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-/* End PBXReferenceProxy section */
 
 /* Begin PBXResourcesBuildPhase section */
 		234AC6402440A45E000D15AD /* Resources */ = {
@@ -289,24 +186,19 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				234AC67E2440FA50000D15AD /* AppConfig.swift in Sources */,
 				234AC6462440A45E000D15AD /* AppDelegate.swift in Sources */,
 				234AC65A2440AF92000D15AD /* RegisterView.swift in Sources */,
+				234AC67A2440E041000D15AD /* BoneTextField.swift in Sources */,
 				234AC6482440A45E000D15AD /* SceneDelegate.swift in Sources */,
 				234AC64A2440A45E000D15AD /* ContentView.swift in Sources */,
 				234AC65C2440B0EE000D15AD /* SignInView.swift in Sources */,
 				234AC65E2440C8D5000D15AD /* ApiClient.swift in Sources */,
+				234AC67C2440E224000D15AD /* BoneSecureField.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
-
-/* Begin PBXTargetDependency section */
-		234AC6782440CA9A000D15AD /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			name = OAuthSwift;
-			targetProxy = 234AC6772440CA9A000D15AD /* PBXContainerItemProxy */;
-		};
-/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		234AC6502440A45F000D15AD /* LaunchScreen.storyboard */ = {
