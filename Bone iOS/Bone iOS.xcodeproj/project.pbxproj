@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 52;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -15,10 +15,15 @@
 		234AC6522440A45F000D15AD /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 234AC6502440A45F000D15AD /* LaunchScreen.storyboard */; };
 		234AC65A2440AF92000D15AD /* RegisterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 234AC6592440AF92000D15AD /* RegisterView.swift */; };
 		234AC65C2440B0EE000D15AD /* SignInView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 234AC65B2440B0EE000D15AD /* SignInView.swift */; };
-		234AC65E2440C8D5000D15AD /* ApiClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 234AC65D2440C8D5000D15AD /* ApiClient.swift */; };
 		234AC67A2440E041000D15AD /* BoneTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 234AC6792440E041000D15AD /* BoneTextField.swift */; };
 		234AC67C2440E224000D15AD /* BoneSecureField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 234AC67B2440E224000D15AD /* BoneSecureField.swift */; };
 		234AC67E2440FA50000D15AD /* AppConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = 234AC67D2440FA50000D15AD /* AppConfig.swift */; };
+		23FC1E4A2449D2720077AC76 /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = 23FC1E492449D2720077AC76 /* Alamofire */; };
+		23FC1E4D2449D2F00077AC76 /* OAuth2 in Frameworks */ = {isa = PBXBuildFile; productRef = 23FC1E4C2449D2F00077AC76 /* OAuth2 */; };
+		23FC1E4F2449D6260077AC76 /* OAuthManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23FC1E4E2449D6260077AC76 /* OAuthManager.swift */; };
+		23FC1E562449DCF90077AC76 /* Moya in Frameworks */ = {isa = PBXBuildFile; productRef = 23FC1E552449DCF90077AC76 /* Moya */; };
+		23FC1E582449DD170077AC76 /* ApiServices.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23FC1E572449DD170077AC76 /* ApiServices.swift */; };
+		23FC1E5A2449DEC30077AC76 /* OAuth2RetryHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23FC1E592449DEC30077AC76 /* OAuth2RetryHandler.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -45,10 +50,12 @@
 		234AC6532440A45F000D15AD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		234AC6592440AF92000D15AD /* RegisterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterView.swift; sourceTree = "<group>"; };
 		234AC65B2440B0EE000D15AD /* SignInView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInView.swift; sourceTree = "<group>"; };
-		234AC65D2440C8D5000D15AD /* ApiClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiClient.swift; sourceTree = "<group>"; };
 		234AC6792440E041000D15AD /* BoneTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BoneTextField.swift; sourceTree = "<group>"; };
 		234AC67B2440E224000D15AD /* BoneSecureField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BoneSecureField.swift; sourceTree = "<group>"; };
 		234AC67D2440FA50000D15AD /* AppConfig.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppConfig.swift; sourceTree = "<group>"; };
+		23FC1E4E2449D6260077AC76 /* OAuthManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OAuthManager.swift; sourceTree = "<group>"; };
+		23FC1E572449DD170077AC76 /* ApiServices.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiServices.swift; sourceTree = "<group>"; };
+		23FC1E592449DEC30077AC76 /* OAuth2RetryHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OAuth2RetryHandler.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,6 +63,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				23FC1E4A2449D2720077AC76 /* Alamofire in Frameworks */,
+				23FC1E4D2449D2F00077AC76 /* OAuth2 in Frameworks */,
+				23FC1E562449DCF90077AC76 /* Moya in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -82,6 +92,7 @@
 		234AC6442440A45E000D15AD /* Bone iOS */ = {
 			isa = PBXGroup;
 			children = (
+				23FC1E4E2449D6260077AC76 /* OAuthManager.swift */,
 				234AC6452440A45E000D15AD /* AppDelegate.swift */,
 				234AC6472440A45E000D15AD /* SceneDelegate.swift */,
 				234AC6492440A45E000D15AD /* ContentView.swift */,
@@ -91,10 +102,11 @@
 				234AC6502440A45F000D15AD /* LaunchScreen.storyboard */,
 				234AC6532440A45F000D15AD /* Info.plist */,
 				234AC64D2440A45F000D15AD /* Preview Content */,
-				234AC65D2440C8D5000D15AD /* ApiClient.swift */,
 				234AC6792440E041000D15AD /* BoneTextField.swift */,
 				234AC67B2440E224000D15AD /* BoneSecureField.swift */,
 				234AC67D2440FA50000D15AD /* AppConfig.swift */,
+				23FC1E572449DD170077AC76 /* ApiServices.swift */,
+				23FC1E592449DEC30077AC76 /* OAuth2RetryHandler.swift */,
 			);
 			path = "Bone iOS";
 			sourceTree = "<group>";
@@ -129,8 +141,15 @@
 			buildRules = (
 			);
 			dependencies = (
+				23FC1E532449D80C0077AC76 /* PBXTargetDependency */,
+				23FC1E512449D8010077AC76 /* PBXTargetDependency */,
 			);
 			name = "Bone iOS";
+			packageProductDependencies = (
+				23FC1E492449D2720077AC76 /* Alamofire */,
+				23FC1E4C2449D2F00077AC76 /* OAuth2 */,
+				23FC1E552449DCF90077AC76 /* Moya */,
+			);
 			productName = "Bone iOS";
 			productReference = 234AC6422440A45E000D15AD /* Bone iOS.app */;
 			productType = "com.apple.product-type.application";
@@ -159,6 +178,11 @@
 				Base,
 			);
 			mainGroup = 234AC6392440A45E000D15AD;
+			packageReferences = (
+				23FC1E482449D2720077AC76 /* XCRemoteSwiftPackageReference "Alamofire" */,
+				23FC1E4B2449D2F00077AC76 /* XCRemoteSwiftPackageReference "OAuth2" */,
+				23FC1E542449DCF90077AC76 /* XCRemoteSwiftPackageReference "Moya" */,
+			);
 			productRefGroup = 234AC6432440A45E000D15AD /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -189,16 +213,29 @@
 				234AC67E2440FA50000D15AD /* AppConfig.swift in Sources */,
 				234AC6462440A45E000D15AD /* AppDelegate.swift in Sources */,
 				234AC65A2440AF92000D15AD /* RegisterView.swift in Sources */,
+				23FC1E5A2449DEC30077AC76 /* OAuth2RetryHandler.swift in Sources */,
 				234AC67A2440E041000D15AD /* BoneTextField.swift in Sources */,
+				23FC1E582449DD170077AC76 /* ApiServices.swift in Sources */,
 				234AC6482440A45E000D15AD /* SceneDelegate.swift in Sources */,
+				23FC1E4F2449D6260077AC76 /* OAuthManager.swift in Sources */,
 				234AC64A2440A45E000D15AD /* ContentView.swift in Sources */,
 				234AC65C2440B0EE000D15AD /* SignInView.swift in Sources */,
-				234AC65E2440C8D5000D15AD /* ApiClient.swift in Sources */,
 				234AC67C2440E224000D15AD /* BoneSecureField.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		23FC1E512449D8010077AC76 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			productRef = 23FC1E502449D8010077AC76 /* OAuth2 */;
+		};
+		23FC1E532449D80C0077AC76 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			productRef = 23FC1E522449D80C0077AC76 /* Alamofire */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		234AC6502440A45F000D15AD /* LaunchScreen.storyboard */ = {
@@ -388,6 +425,61 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		23FC1E482449D2720077AC76 /* XCRemoteSwiftPackageReference "Alamofire" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/Alamofire/Alamofire.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.1.0;
+			};
+		};
+		23FC1E4B2449D2F00077AC76 /* XCRemoteSwiftPackageReference "OAuth2" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/p2/OAuth2";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.2.0;
+			};
+		};
+		23FC1E542449DCF90077AC76 /* XCRemoteSwiftPackageReference "Moya" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/Moya/Moya.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 14.0.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		23FC1E492449D2720077AC76 /* Alamofire */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 23FC1E482449D2720077AC76 /* XCRemoteSwiftPackageReference "Alamofire" */;
+			productName = Alamofire;
+		};
+		23FC1E4C2449D2F00077AC76 /* OAuth2 */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 23FC1E4B2449D2F00077AC76 /* XCRemoteSwiftPackageReference "OAuth2" */;
+			productName = OAuth2;
+		};
+		23FC1E502449D8010077AC76 /* OAuth2 */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 23FC1E4B2449D2F00077AC76 /* XCRemoteSwiftPackageReference "OAuth2" */;
+			productName = OAuth2;
+		};
+		23FC1E522449D80C0077AC76 /* Alamofire */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 23FC1E482449D2720077AC76 /* XCRemoteSwiftPackageReference "Alamofire" */;
+			productName = Alamofire;
+		};
+		23FC1E552449DCF90077AC76 /* Moya */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 23FC1E542449DCF90077AC76 /* XCRemoteSwiftPackageReference "Moya" */;
+			productName = Moya;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 234AC63A2440A45E000D15AD /* Project object */;
 }

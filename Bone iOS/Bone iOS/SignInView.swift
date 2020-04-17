@@ -62,8 +62,15 @@ struct SignInView: View {
     }
     
     func logIn() {
-        let config = AppConfig()
+        let oauth2 = OAuthManager.shared.oauth2
+        oauth2.authConfig.authorizeEmbedded = true
+        oauth2.authConfig.authorizeContext = self as AnyObject
+        oauth2.authorize(params: nil) { (json, error) in
+            debugPrint("auth: json:\(String(describing: json)). error: \(String(describing: error))")
+        }
     }
+    
+
 }
 
 struct SignInView_Previews: PreviewProvider {
