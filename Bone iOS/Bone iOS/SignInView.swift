@@ -12,6 +12,7 @@ struct SignInView: View {
     @State private var email: String = ""
     @State private var password: String = ""
     @State private var showingAlert = false
+    @State private var isLoggedIn = false
     
     var body: some View {
         VStack {
@@ -54,6 +55,9 @@ struct SignInView: View {
             }
             .padding()
             .background(Color.gray)
+            NavigationLink(destination: HomeView(), isActive: self.$isLoggedIn) {
+                Text("")
+            }
             Spacer()
            
         }
@@ -63,10 +67,15 @@ struct SignInView: View {
     
     func logIn() {
         let oauth2 = OAuthManager.shared.oauth2
-        oauth2.authConfig.authorizeEmbedded = true
-        oauth2.authConfig.authorizeContext = self as AnyObject
-        oauth2.authorize(params: nil) { (json, error) in
-            debugPrint("auth: json:\(String(describing: json)). error: \(String(describing: error))")
+        oauth2.authorize(params: nil) { authParameters, error in
+            if let params = authParameters {
+                print("Authorized! Access token is in `oauth2.accessToken`")
+                print("Authorized! Additional parameters: \(params)")
+                self.isLoggedIn = true;
+            }
+            else {
+                print("Authorization was canceled or went wrong: \(String(describing: error))")   // error will not be nil
+            }
         }
     }
     

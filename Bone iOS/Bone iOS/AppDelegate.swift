@@ -34,19 +34,48 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Use this method to release any resources that were specific to the discarded scenes, as they will not return.
     }
     
-    func application(_ app: UIApplication, open url: URL, options: [UIApplication.OpenURLOptionsKey : Any] = [:]) -> Bool {
-        debugPrint("host:\(String(describing: url.host))")
+    func application(_ application: UIApplication,
+                     open url: URL,
+                     options: [UIApplication.OpenURLOptionsKey : Any] = [:] ) -> Bool {
         
-        if (url.host == "oauth-tutorial") {
-            debugPrint("url:\(url)")
-            do {
-                try OAuthManager.shared.oauth2.handleRedirectURL(url)
-            } catch {
-                debugPrint("error trying to handle redirect")
-            }
+        // Determine who sent the URL.
+        let sendingAppID = options[.sourceApplication]
+        print("source application = \(sendingAppID ?? "Unknown")")
+        
+        // Process the URL.
+        guard let components = NSURLComponents(url: url, resolvingAgainstBaseURL: true),
+            let albumPath = components.path,
+            let params = components.queryItems else {
+                print("Invalid URL or album path missing")
+                return false
         }
         
-        return true
+        if let photoIndex = params.first(where: { $0.name == "index" })?.value {
+            print("albumPath = \(albumPath)")
+            print("photoIndex = \(photoIndex)")
+            return true
+        } else {
+            print("Photo index missing")
+            return false
+        }
     }
+    
+//    func application(_ app: UIApplication, open url: URL, options: [UIApplication.OpenURLOptionsKey : Any] = [:]) -> Bool {
+//        let sendingAppID = options[.sourceApplication]
+//        print("source application = \(sendingAppID ?? "Unknown")")
+//
+//        // Process the URL.
+//        let components = NSURLComponents(url: url, resolvingAgainstBaseURL: true)
+//
+//        debugPrint(components)
+//        debugPrint("host:\(String(describing: url.host))")
+//
+//        if (url.host == "bone") {
+//            debugPrint("url:\(url)")
+//            OAuthManager.shared.oauth2.handleRedirectURL(url)
+//        }
+//
+//        return true
+//    }
 }
 
