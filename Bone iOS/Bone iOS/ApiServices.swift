@@ -3,26 +3,26 @@ import Moya
 
 enum ApiServices {
     case getUser
-    case getAccount
+    case getProfile
 }
 
 extension ApiServices: TargetType {
-    static let baseURLPath = "https://api.coinbase.com"
+    static let baseURLPath = "https://api.mcleandigital.co.uk"
 
     var baseURL: URL { return URL(string: ApiServices.baseURLPath)! }
     var path: String {
         switch self {
         case .getUser:
-            return "/v2/user"
-        case .getAccount:
-            return "/v2/accounts"
+            return "/api/user/me"
+        case .getProfile:
+            return "/api/user/profile"
         }
     }
     var method: Moya.Method {
         switch self {
         case .getUser:
             return .get
-        case .getAccount:
+        case .getProfile:
             return .get
         }
     }
@@ -30,13 +30,13 @@ extension ApiServices: TargetType {
         switch self {
         case .getUser: // Send no parameters
             return .requestPlain
-        case .getAccount: // Send no parameters
+        case .getProfile: // Send no parameters
             return .requestPlain
         }
     }
     var sampleData: Data {
         switch self {
-        case .getUser, .getAccount:
+        case .getUser, .getProfile:
             return "Half measures are as bad as nothing at all.".utf8Encoded
         }
     }
@@ -51,7 +51,7 @@ extension ApiServices: TargetType {
 extension ApiServices: AccessTokenAuthorizable {
     var authorizationType: AuthorizationType? {
         switch self {
-        case .getUser, .getAccount:
+        case .getUser, .getProfile:
             return .none
         }
     }

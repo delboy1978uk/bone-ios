@@ -60,6 +60,7 @@ struct RegisterView: View {
     }
     
     func register() {
+        
         let oauth2 = OAuthManager.shared.registrationClient
         oauth2.authConfig.authorizeEmbedded = true
         oauth2.authConfig.authorizeContext = self as AnyObject

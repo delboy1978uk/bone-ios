@@ -18,6 +18,8 @@
 		234AC67A2440E041000D15AD /* BoneTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 234AC6792440E041000D15AD /* BoneTextField.swift */; };
 		234AC67C2440E224000D15AD /* BoneSecureField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 234AC67B2440E224000D15AD /* BoneSecureField.swift */; };
 		234AC67E2440FA50000D15AD /* AppConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = 234AC67D2440FA50000D15AD /* AppConfig.swift */; };
+		23592D32245C76FE00317D70 /* BoneUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23592D31245C76FE00317D70 /* BoneUser.swift */; };
+		23592D382462365B00317D70 /* BonePerson.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23592D372462365B00317D70 /* BonePerson.swift */; };
 		23CED35E2457669B00861F3B /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23CED35D2457669B00861F3B /* HomeView.swift */; };
 		23FC1E4A2449D2720077AC76 /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = 23FC1E492449D2720077AC76 /* Alamofire */; };
 		23FC1E4D2449D2F00077AC76 /* OAuth2 in Frameworks */ = {isa = PBXBuildFile; productRef = 23FC1E4C2449D2F00077AC76 /* OAuth2 */; };
@@ -54,6 +56,8 @@
 		234AC6792440E041000D15AD /* BoneTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BoneTextField.swift; sourceTree = "<group>"; };
 		234AC67B2440E224000D15AD /* BoneSecureField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BoneSecureField.swift; sourceTree = "<group>"; };
 		234AC67D2440FA50000D15AD /* AppConfig.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppConfig.swift; sourceTree = "<group>"; };
+		23592D31245C76FE00317D70 /* BoneUser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BoneUser.swift; sourceTree = "<group>"; };
+		23592D372462365B00317D70 /* BonePerson.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BonePerson.swift; sourceTree = "<group>"; };
 		23CED35D2457669B00861F3B /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 		23FC1E4E2449D6260077AC76 /* OAuthManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OAuthManager.swift; sourceTree = "<group>"; };
 		23FC1E572449DD170077AC76 /* ApiServices.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiServices.swift; sourceTree = "<group>"; };
@@ -109,7 +113,9 @@
 				234AC67D2440FA50000D15AD /* AppConfig.swift */,
 				23FC1E572449DD170077AC76 /* ApiServices.swift */,
 				23FC1E592449DEC30077AC76 /* OAuth2RetryHandler.swift */,
+				23592D31245C76FE00317D70 /* BoneUser.swift */,
 				23CED35D2457669B00861F3B /* HomeView.swift */,
+				23592D372462365B00317D70 /* BonePerson.swift */,
 			);
 			path = "Bone iOS";
 			sourceTree = "<group>";
@@ -219,12 +225,14 @@
 				23FC1E5A2449DEC30077AC76 /* OAuth2RetryHandler.swift in Sources */,
 				234AC67A2440E041000D15AD /* BoneTextField.swift in Sources */,
 				23FC1E582449DD170077AC76 /* ApiServices.swift in Sources */,
+				23592D382462365B00317D70 /* BonePerson.swift in Sources */,
 				234AC6482440A45E000D15AD /* SceneDelegate.swift in Sources */,
 				23FC1E4F2449D6260077AC76 /* OAuthManager.swift in Sources */,
 				234AC64A2440A45E000D15AD /* ContentView.swift in Sources */,
 				23CED35E2457669B00861F3B /* HomeView.swift in Sources */,
 				234AC65C2440B0EE000D15AD /* SignInView.swift in Sources */,
 				234AC67C2440E224000D15AD /* BoneSecureField.swift in Sources */,
+				23592D32245C76FE00317D70 /* BoneUser.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

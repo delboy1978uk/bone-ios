@@ -7,6 +7,7 @@
 //
 
 import SwiftUI
+import OAuth2
 
 struct SignInView: View {
     @State private var email: String = ""
@@ -67,9 +68,11 @@ struct SignInView: View {
     
     func logIn() {
         let oauth2 = OAuthManager.shared.oauth2
+
+        oauth2.logger = OAuth2DebugLogger(.trace)
         oauth2.authorize(params: nil) { authParameters, error in
             if let params = authParameters {
-                print("Authorized! Access token is in `oauth2.accessToken`")
+                print("Authorized! Access token is `\(String(describing: oauth2.accessToken))`")
                 print("Authorized! Additional parameters: \(params)")
                 self.isLoggedIn = true;
             }

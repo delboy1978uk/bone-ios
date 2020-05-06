@@ -2,7 +2,7 @@ import Foundation
 import OAuth2
 import Alamofire
 
-class OAuth2RetryHandler: RequestRetrier, RequestAdapter {
+class OAuth2RetryHandler: RequestInterceptor {
     
     let loader: OAuth2DataLoader
 
