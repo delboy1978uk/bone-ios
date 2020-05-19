@@ -67,7 +67,7 @@ struct SignInView: View {
     }
     
     func logIn() {
-        let oauth2 = OAuthManager.shared.oauth2
+        let oauth2 = OAuthManager.shared.getClient()
 
         oauth2.logger = OAuth2DebugLogger(.trace)
         oauth2.authorize(params: nil) { authParameters, error in
@@ -77,7 +77,8 @@ struct SignInView: View {
                 self.isLoggedIn = true;
             }
             else {
-                print("Authorization was canceled or went wrong: \(String(describing: error))")   // error will not be nil
+                print("Authorization was canceled or went wrong: \(String(describing: error))")
+
             }
         }
     }

@@ -16,6 +16,9 @@ struct HomeView: View {
     
     var user: BoneUser? = nil
     
+    @State private var email: String = ""
+    @State private var name: String = ""
+    
     var body: some View {
         NavigationView {
             VStack {
@@ -26,7 +29,11 @@ struct HomeView: View {
                     .font(.title)
                     .padding(.bottom)
                     .foregroundColor(Color.white)
-                Text("Now grab user details from API!")
+                Text(name)
+                    .font(.title)
+                    .foregroundColor(Color.white)
+                Text(email)
+                    .foregroundColor(Color.white)
                 Spacer()
                 
             }.background(Image("intro-bg"))
@@ -36,7 +43,7 @@ struct HomeView: View {
     }
     
     private func fetchUser() {
-        let oauth2 = OAuthManager.shared.oauth2
+        let oauth2 = OAuthManager.shared.getClient()
         oauth2.logger = OAuth2DebugLogger(.trace)
         let retrier = OAuth2RetryHandler(oauth2: oauth2)
         let configuration = URLSessionConfiguration.default
@@ -56,7 +63,8 @@ struct HomeView: View {
                     let person = try filteredResponse.map(BonePerson.self, atKeyPath: "person", using: decoder, failsOnEmptyData: false)
                     let user = try filteredResponse.map(BoneUser.self, atKeyPath: "", using: decoder, failsOnEmptyData: false)
                     user.person = person
-                    self.user = user
+                    self.email = user.email
+                    self.name = (person.firstname ?? "") + " " + (person.lastname ?? "")
                 }
                 catch let error {
                     debugPrint("Bone account error:\(error)")

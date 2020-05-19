@@ -2,7 +2,7 @@ import OAuth2
 
 
 struct OAuthManager {
-    static let shared = OAuthManager()
+    static var shared = OAuthManager()
 
     var registrationClient = OAuth2ClientCredentials(settings: [
         "client_id": "cc52460765f08d0f29ceb0deaf37645f",
@@ -15,9 +15,7 @@ struct OAuthManager {
         "keychain": true,
         ] as OAuth2JSON)
     
-    var oauth2 = OAuth2CodeGrant(settings: [
-        "client_id": "da03fbd98f3b52da981b2e50bba4bcd4",
-        "client_secret": "JDJ5JDEwJGcyY0YweGNsM2dxUVBCZDg2NFlrVk81bDQuMW55blJPS09GT3cyMERIRWhISUM4RTdLa29T",
+    var clientSettings = [
         "authorize_uri": "https://api.mcleandigital.co.uk/oauth2/authorize",
         "token_uri": "https://api.mcleandigital.co.uk/oauth2/token",
         "redirect_uris": ["bone://oauth2/callback"],   // register your own "myapp" scheme in Info.plist
@@ -25,5 +23,34 @@ struct OAuthManager {
         "use_pkce": true,
         "secret_in_body": true,    // Github needs this
         "keychain": true,
-        ] as OAuth2JSON)
+        ] as [String : Any]
+    
+    private var oauth2: OAuth2CodeGrant!
+    
+    func hasClientRegistered() -> Bool {
+        let clientId = KeychainWrapper.standard.string(forKey: "client_id")
+        
+        if clientId != nil{
+            return true
+        }
+        
+        return false
+    }
+    
+    func registerClient(clientID: String, clientSecret: String) {
+        KeychainWrapper.standard.set(clientID, forKey: "client_id")
+        KeychainWrapper.standard.set(clientID, forKey: "client_secret")
+    }
+    
+    mutating func createUserClient() {
+        let clientId = KeychainWrapper.standard.string(forKey: "client_id")
+        let clientSecret = KeychainWrapper.standard.string(forKey: "client_secret")
+        clientSettings["client_id"] = clientId
+        clientSettings["client_secret"] = clientSecret
+        OAuthManager.shared.oauth2 = OAuth2CodeGrant(settings: clientSettings as OAuth2JSON)
+    }
+    
+    func getClient() -> OAuth2CodeGrant {
+        return oauth2
+    }
 }

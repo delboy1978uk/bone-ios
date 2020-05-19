@@ -62,7 +62,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
     func scene(_ scene: UIScene, openURLContexts URLContexts: Set<UIOpenURLContext>) {
         if let url = URLContexts.first?.url {
             debugPrint (url.absoluteString)
-            OAuthManager.shared.oauth2.handleRedirectURL(url)
+            OAuthManager.shared.getClient().handleRedirectURL(url)
         }
     }
 }

@@ -9,6 +9,9 @@
 import SwiftUI
 
 struct ContentView: View {
+    
+    @State var hasAccessToken = false
+    
     var body: some View {
         NavigationView {
             VStack {
@@ -37,9 +40,34 @@ struct ContentView: View {
                     Spacer()
                 }
                 Spacer()
+                NavigationLink(destination: HomeView(), isActive: $hasAccessToken) {
+                  Text("")
+                }.hidden()
             }.background(Image("intro-bg"))
         }
         .accentColor(Color.white)
+        .onAppear(perform: checkForClient)
+    }
+    
+    func checkForClient()
+    {
+        var oauth2 = OAuthManager.shared
+        
+        if (!oauth2.hasClientRegistered()) {
+            let clientId = "da03fbd98f3b52da981b2e50bba4bcd4"
+            let clientSecret = "JDJ5JDEwJGcyY0YweGNsM2dxUVBCZDg2NFlrVk81bDQuMW55blJPS09GT3cyMERIRWhISUM4RTdLa29T"
+            oauth2.registerClient(clientID: clientId, clientSecret: clientSecret)
+        }
+        
+        oauth2.createUserClient()
+        self.checkForAccessToken()
+    }
+    
+    func checkForAccessToken() {
+        let oauth2 = OAuthManager.shared.getClient()
+        if (oauth2.hasUnexpiredAccessToken()) {
+            hasAccessToken = true;
+        }
     }
 }
 
