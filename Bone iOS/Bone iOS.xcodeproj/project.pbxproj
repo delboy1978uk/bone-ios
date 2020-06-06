@@ -22,6 +22,7 @@
 		23592D382462365B00317D70 /* BonePerson.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23592D372462365B00317D70 /* BonePerson.swift */; };
 		23599E442473CB78002B28C9 /* KeychainItemAccessibility.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23599E422473CB77002B28C9 /* KeychainItemAccessibility.swift */; };
 		23599E452473CB78002B28C9 /* KeychainWrapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23599E432473CB78002B28C9 /* KeychainWrapper.swift */; };
+		235EB8CA2485133D0059DBBE /* ClientRegistrationRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 235EB8C92485133D0059DBBE /* ClientRegistrationRequest.swift */; };
 		23CED35E2457669B00861F3B /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23CED35D2457669B00861F3B /* HomeView.swift */; };
 		23FC1E4A2449D2720077AC76 /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = 23FC1E492449D2720077AC76 /* Alamofire */; };
 		23FC1E4D2449D2F00077AC76 /* OAuth2 in Frameworks */ = {isa = PBXBuildFile; productRef = 23FC1E4C2449D2F00077AC76 /* OAuth2 */; };
@@ -62,6 +63,7 @@
 		23592D372462365B00317D70 /* BonePerson.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BonePerson.swift; sourceTree = "<group>"; };
 		23599E422473CB77002B28C9 /* KeychainItemAccessibility.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KeychainItemAccessibility.swift; sourceTree = "<group>"; };
 		23599E432473CB78002B28C9 /* KeychainWrapper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KeychainWrapper.swift; sourceTree = "<group>"; };
+		235EB8C92485133D0059DBBE /* ClientRegistrationRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClientRegistrationRequest.swift; sourceTree = "<group>"; };
 		23CED35D2457669B00861F3B /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 		23FC1E4E2449D6260077AC76 /* OAuthManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OAuthManager.swift; sourceTree = "<group>"; };
 		23FC1E572449DD170077AC76 /* ApiServices.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiServices.swift; sourceTree = "<group>"; };
@@ -122,6 +124,7 @@
 				23592D31245C76FE00317D70 /* BoneUser.swift */,
 				23CED35D2457669B00861F3B /* HomeView.swift */,
 				23592D372462365B00317D70 /* BonePerson.swift */,
+				235EB8C92485133D0059DBBE /* ClientRegistrationRequest.swift */,
 			);
 			path = "Bone iOS";
 			sourceTree = "<group>";
@@ -231,6 +234,7 @@
 				23FC1E5A2449DEC30077AC76 /* OAuth2RetryHandler.swift in Sources */,
 				234AC67A2440E041000D15AD /* BoneTextField.swift in Sources */,
 				23FC1E582449DD170077AC76 /* ApiServices.swift in Sources */,
+				235EB8CA2485133D0059DBBE /* ClientRegistrationRequest.swift in Sources */,
 				23592D382462365B00317D70 /* BonePerson.swift in Sources */,
 				234AC6482440A45E000D15AD /* SceneDelegate.swift in Sources */,
 				23599E442473CB78002B28C9 /* KeychainItemAccessibility.swift in Sources */,

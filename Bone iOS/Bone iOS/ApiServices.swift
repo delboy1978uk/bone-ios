@@ -2,7 +2,7 @@ import Foundation
 import Moya
 
 enum ApiServices {
-    case getUser
+    case registerClient
     case getProfile
 }
 
@@ -12,31 +12,42 @@ extension ApiServices: TargetType {
     var baseURL: URL { return URL(string: ApiServices.baseURLPath)! }
     var path: String {
         switch self {
-        case .getUser:
-            return "/api/user/me"
+        case .registerClient:
+            return "/oauth2/register"
         case .getProfile:
             return "/api/user/profile"
         }
     }
     var method: Moya.Method {
         switch self {
-        case .getUser:
-            return .get
+        case .registerClient:
+            return .post
         case .getProfile:
             return .get
         }
     }
     var task: Task {
         switch self {
-        case .getUser: // Send no parameters
-            return .requestPlain
+        case .registerClient:
+            let settings = OAuthManager.shared.clientSettings
+            let uris = settings["redirect_uris"] as! [String]
+            let redirect = uris[0]
+            let config = AppConfig()
+            
+            return .requestJSONEncodable([
+                "redirect_uris": redirect,
+                "client_name": config.clientName,
+                "token_endpoint_auth_method": "client_secret_basic",
+                "logo_uri": config.LogoUri
+            ])
+            
         case .getProfile: // Send no parameters
             return .requestPlain
         }
     }
     var sampleData: Data {
         switch self {
-        case .getUser, .getProfile:
+        case .registerClient, .getProfile:
             return "Half measures are as bad as nothing at all.".utf8Encoded
         }
     }
@@ -51,7 +62,7 @@ extension ApiServices: TargetType {
 extension ApiServices: AccessTokenAuthorizable {
     var authorizationType: AuthorizationType? {
         switch self {
-        case .getUser, .getProfile:
+        case .registerClient, .getProfile:
             return .none
         }
     }

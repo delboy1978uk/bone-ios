@@ -38,6 +38,7 @@ struct HomeView: View {
                 
             }.background(Image("intro-bg"))
         }
+        .navigationBarBackButtonHidden(true)
         .accentColor(Color.white)
         .onAppear(perform: fetchUser)
     }

@@ -1,7 +1,7 @@
 import OAuth2
 
 
-struct OAuthManager {
+class OAuthManager {
     static var shared = OAuthManager()
 
     var registrationClient = OAuth2ClientCredentials(settings: [
@@ -10,11 +10,12 @@ struct OAuthManager {
         "authorize_uri": "https://api.mcleandigital.co.uk/oauth2/authorize",
         "token_uri": "https://api.mcleandigital.co.uk/oauth2/token",   
         "redirect_uris": ["bone://oauth2/callback"],   // register your own "myapp" scheme in Info.plist
-        "scope": "basic register-user",
+        "scope": "register",
         "secret_in_body": true,    // Github needs this
         "keychain": true,
+        "keychain_account_for_tokens": "regClientTokens"
         ] as OAuth2JSON)
-    
+    //
     var clientSettings = [
         "authorize_uri": "https://api.mcleandigital.co.uk/oauth2/authorize",
         "token_uri": "https://api.mcleandigital.co.uk/oauth2/token",
@@ -23,31 +24,42 @@ struct OAuthManager {
         "use_pkce": true,
         "secret_in_body": true,    // Github needs this
         "keychain": true,
+        "keychain_account_for_tokens": "userTokens"
         ] as [String : Any]
     
-    private var oauth2: OAuth2CodeGrant!
+    private var oauth2: OAuth2CodeGrant! = nil
+    private var userClientInitialised: Bool = false
     
     func hasClientRegistered() -> Bool {
         let clientId = KeychainWrapper.standard.string(forKey: "client_id")
         
         if clientId != nil{
+            print("client has registered")
             return true
         }
-        
+        print("client has not registered")
         return false
     }
     
-    func registerClient(clientID: String, clientSecret: String) {
+    func storeClient(clientID: String, clientSecret: String) { 
         KeychainWrapper.standard.set(clientID, forKey: "client_id")
         KeychainWrapper.standard.set(clientID, forKey: "client_secret")
     }
     
-    mutating func createUserClient() {
+    func hasUserClientInitialised() -> Bool {
+        return userClientInitialised
+    }
+    
+    func initUserClient() -> OAuth2CodeGrant {
+        print ("creating user client")
         let clientId = KeychainWrapper.standard.string(forKey: "client_id")
         let clientSecret = KeychainWrapper.standard.string(forKey: "client_secret")
         clientSettings["client_id"] = clientId
         clientSettings["client_secret"] = clientSecret
         OAuthManager.shared.oauth2 = OAuth2CodeGrant(settings: clientSettings as OAuth2JSON)
+        userClientInitialised = true
+        
+        return OAuthManager.shared.oauth2
     }
     
     func getClient() -> OAuth2CodeGrant {

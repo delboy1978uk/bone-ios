@@ -14,4 +14,6 @@ struct AppConfig {
     var clientKey = "cc52460765f08d0f29ceb0deaf37645f"
     var clientSecret = "JDJ5JDEwJDNlOGZVQjdaWVl1cHl1WVZpSElLei5EcHM1MEhnWHY0dDVQNllBdzRyRGRneUdLb0RXNkFx"
     var callbackUrl = "bone://oauth2/callback"
+    var clientName = "Bone Framework iOS"
+    var LogoUri = "https://api.mcleandigital.co.uk/img/skull_and_crossbones.png"
 }
