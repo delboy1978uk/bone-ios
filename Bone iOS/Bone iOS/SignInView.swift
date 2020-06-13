@@ -57,7 +57,7 @@ struct SignInView: View {
             .padding()
             .background(Color.gray)
             NavigationLink(destination: HomeView(), isActive: self.$isLoggedIn) {
-                Text("")
+                EmptyView()
             }
             Spacer()
            

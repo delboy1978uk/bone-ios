@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2326612F2494FD3B005EAAFD /* RegisteredCheckEmailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2326612E2494FD3B005EAAFD /* RegisteredCheckEmailView.swift */; };
+		23266133249508B8005EAAFD /* View-hidden.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23266132249508B8005EAAFD /* View-hidden.swift */; };
 		234AC6462440A45E000D15AD /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 234AC6452440A45E000D15AD /* AppDelegate.swift */; };
 		234AC6482440A45E000D15AD /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 234AC6472440A45E000D15AD /* SceneDelegate.swift */; };
 		234AC64A2440A45E000D15AD /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 234AC6492440A45E000D15AD /* ContentView.swift */; };
@@ -47,6 +49,8 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		2326612E2494FD3B005EAAFD /* RegisteredCheckEmailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisteredCheckEmailView.swift; sourceTree = "<group>"; };
+		23266132249508B8005EAAFD /* View-hidden.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "View-hidden.swift"; sourceTree = "<group>"; };
 		234AC6422440A45E000D15AD /* Bone iOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Bone iOS.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		234AC6452440A45E000D15AD /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		234AC6472440A45E000D15AD /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -125,9 +129,11 @@
 				23FC1E4E2449D6260077AC76 /* OAuthManager.swift */,
 				234AC64D2440A45F000D15AD /* Preview Content */,
 				234AC6592440AF92000D15AD /* RegisterView.swift */,
+				2326612E2494FD3B005EAAFD /* RegisteredCheckEmailView.swift */,
 				234AC6472440A45E000D15AD /* SceneDelegate.swift */,
 				234AC65B2440B0EE000D15AD /* SignInView.swift */,
 				23538AC424911B67008526D1 /* UserRegistrationRequest.swift */,
+				23266132249508B8005EAAFD /* View-hidden.swift */,
 			);
 			path = "Bone iOS";
 			sourceTree = "<group>";
@@ -235,6 +241,7 @@
 				234AC6462440A45E000D15AD /* AppDelegate.swift in Sources */,
 				234AC65A2440AF92000D15AD /* RegisterView.swift in Sources */,
 				23538AC524911B67008526D1 /* UserRegistrationRequest.swift in Sources */,
+				23266133249508B8005EAAFD /* View-hidden.swift in Sources */,
 				23FC1E5A2449DEC30077AC76 /* OAuth2RetryHandler.swift in Sources */,
 				234AC67A2440E041000D15AD /* BoneTextField.swift in Sources */,
 				23FC1E582449DD170077AC76 /* ApiServices.swift in Sources */,
@@ -247,6 +254,7 @@
 				23CED35E2457669B00861F3B /* HomeView.swift in Sources */,
 				234AC65C2440B0EE000D15AD /* SignInView.swift in Sources */,
 				23599E452473CB78002B28C9 /* KeychainWrapper.swift in Sources */,
+				2326612F2494FD3B005EAAFD /* RegisteredCheckEmailView.swift in Sources */,
 				234AC67C2440E224000D15AD /* BoneSecureField.swift in Sources */,
 				23592D32245C76FE00317D70 /* BoneUser.swift in Sources */,
 			);

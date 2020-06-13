@@ -21,6 +21,15 @@ struct RegisterView: View {
     @State private var emailErrorText: String = ""
     @State private var passwordErrorText: String = ""
     @State private var confirmErrorText: String = ""
+    @State private var successfullyRegistered: Bool = false
+    @State private var showError: Bool = false
+    @State private var showEmailError: Bool = false
+    @State private var showPasswordError: Bool = false
+    @State private var showConfirmError: Bool = false
+    @State private var errorBackground: Color? = nil
+    @State private var emailErrorBackground: Color? = nil
+    @State private var passwordErrorBackground: Color? = nil
+    @State private var confirmErrorBackground: Color? = nil
     
     var body: some View {
         VStack {
@@ -33,6 +42,10 @@ struct RegisterView: View {
                 .foregroundColor(Color.white)
             VStack {
                 Text(errorText)
+                    .frame(maxWidth: .infinity)
+                    .isHidden(self.showError)
+                    .background(self.errorBackground)
+                    .foregroundColor(Color.white)
                     
                 BoneTextField(
                     placeholder: Text("Email address..").foregroundColor(.gray),
@@ -45,7 +58,12 @@ struct RegisterView: View {
                     .autocapitalization(.none)
                     .keyboardType(.emailAddress)
                     .border(Color.red, width: emailBorder)
+
                 Text(emailErrorText)
+                    .foregroundColor(Color.white)
+                    .frame(maxWidth: .infinity)
+                    .background(self.emailErrorBackground)
+                    .isHidden(self.showEmailError)
                 BoneSecureField(
                     placeholder: Text("Choose a password..").foregroundColor(.gray),
                     text: $password
@@ -57,6 +75,10 @@ struct RegisterView: View {
                     .autocapitalization(.none)
                     .border(Color.red, width: passwordBorder)
                 Text(passwordErrorText)
+                    .foregroundColor(Color.white)
+                    .frame(maxWidth: .infinity)
+                    .isHidden(self.showPasswordError)
+                    .background(self.passwordErrorBackground)
                 BoneSecureField(
                     placeholder: Text("Confirm your password..").foregroundColor(.gray),
                     text: $confirm
@@ -68,6 +90,10 @@ struct RegisterView: View {
                     .autocapitalization(.none)
                     .border(Color.red, width: confirmBorder)
                 Text(confirmErrorText)
+                    .foregroundColor(Color.white)
+                    .frame(maxWidth: .infinity)
+                    .isHidden(self.showConfirmError)
+                    .background(self.confirmErrorBackground)
                 HStack {
                     Spacer()
                     Button(action: register) {
@@ -77,7 +103,10 @@ struct RegisterView: View {
                             .foregroundColor(Color.white)
                     }
                 }
-                
+                NavigationLink(destination: RegisteredCheckEmailView(), isActive: $successfullyRegistered) {
+                    EmptyView()
+                }
+        
             }
             .padding()
             .background(Color.gray)
@@ -95,6 +124,14 @@ struct RegisterView: View {
         self.emailBorder = 0
         self.passwordBorder = 0
         self.confirmBorder = 0
+        self.showError = false
+        self.showEmailError = false
+        self.showPasswordError = false
+        self.showConfirmError = false
+        self.errorBackground = nil
+        self.emailErrorBackground = nil
+        self.passwordErrorBackground = nil
+        self.confirmErrorBackground = nil
     }
     
     func register() {
@@ -122,21 +159,23 @@ struct RegisterView: View {
                                     if (key == "email") {
                                         self.emailBorder = 2.0
                                         self.emailErrorText = value[0]
+                                        self.emailErrorBackground = Color(.red)
                                     } else if (key == "password") {
                                         self.passwordBorder = 2.0
                                         self.passwordErrorText = value[0]
+                                        self.passwordErrorBackground = Color(.red)
                                     }else if (key == "confirm") {
                                         self.confirmBorder = 2.0
                                         self.confirmErrorText = value[0]
+                                        self.confirmErrorBackground = Color(.red)
                                     }
                                 }
                             } else if let error = json["error"] as? String {
                                 self.errorText = error
+                                self.errorBackground = Color(.red)
                             } else {
-                                // handle success
+                                self.successfullyRegistered = true;
                             }
-
-                        
                         }
                     } catch let error as NSError {
                         print("Failed to load: \(error.localizedDescription)")
