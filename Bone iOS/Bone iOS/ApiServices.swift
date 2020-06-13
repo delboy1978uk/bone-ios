@@ -4,6 +4,7 @@ import Moya
 enum ApiServices {
     case registerClient
     case getProfile
+    case registerUser(email: String, password: String, confirm: String)
 }
 
 extension ApiServices: TargetType {
@@ -14,6 +15,8 @@ extension ApiServices: TargetType {
         switch self {
         case .registerClient:
             return "/oauth2/register"
+        case .registerUser:
+            return "/api/user/register"
         case .getProfile:
             return "/api/user/profile"
         }
@@ -21,6 +24,8 @@ extension ApiServices: TargetType {
     var method: Moya.Method {
         switch self {
         case .registerClient:
+            return .post
+        case .registerUser:
             return .post
         case .getProfile:
             return .get
@@ -40,14 +45,19 @@ extension ApiServices: TargetType {
                 "token_endpoint_auth_method": "client_secret_basic",
                 "logo_uri": config.LogoUri
             ])
-            
-        case .getProfile: // Send no parameters
+        case .getProfile:
             return .requestPlain
+        case .registerUser(let email, let password, let confirm):
+            return .requestJSONEncodable([
+                "email" : email,
+                "password" : password,
+                "confirm" : confirm
+            ])
         }
     }
     var sampleData: Data {
         switch self {
-        case .registerClient, .getProfile:
+        case .registerClient, .getProfile, .registerUser:
             return "Half measures are as bad as nothing at all.".utf8Encoded
         }
     }
@@ -62,7 +72,7 @@ extension ApiServices: TargetType {
 extension ApiServices: AccessTokenAuthorizable {
     var authorizationType: AuthorizationType? {
         switch self {
-        case .registerClient, .getProfile:
+        case .registerClient, .getProfile, .registerUser:
             return .none
         }
     }
@@ -77,3 +87,4 @@ private extension String {
         return data(using: .utf8)!
     }
 }
+

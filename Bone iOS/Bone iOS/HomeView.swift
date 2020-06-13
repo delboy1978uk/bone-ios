@@ -18,30 +18,38 @@ struct HomeView: View {
     
     @State private var email: String = ""
     @State private var name: String = ""
+    @Environment(\.presentationMode) var presentationMode: Binding<PresentationMode>
     
     var body: some View {
-        NavigationView {
-            VStack {
-                Image("skull_and_crossbones")
-                    .resizable()
-                    .frame(width: 200, height: 140)
-                Text("WELCOME")
-                    .font(.title)
-                    .padding(.bottom)
-                    .foregroundColor(Color.white)
-                Text(name)
-                    .font(.title)
-                    .foregroundColor(Color.white)
-                Text(email)
-                    .foregroundColor(Color.white)
-                Spacer()
-                
-            }.background(Image("intro-bg"))
+        VStack {
+            Image("skull_and_crossbones")
+                .resizable()
+                .frame(width: 200, height: 140)
+            Text("WELCOME")
+                .font(.title)
+                .padding(.bottom)
+                .foregroundColor(Color.white)
+            Text(name)
+                .font(.title)
+                .foregroundColor(Color.white)
+            Text(email)
+                .foregroundColor(Color.white)
+            Spacer()
+            Button(action: logOut) {
+               Text("Log Out")
+                   .padding()
+                   .background(Color.red)
+                   .foregroundColor(Color.white)
+           }
+            Spacer()
+            
         }
-        .navigationBarBackButtonHidden(true)
-        .accentColor(Color.white)
+        .background(Image("intro-bg"))
         .onAppear(perform: fetchUser)
+        .navigationBarHidden(true)
+        .navigationBarBackButtonHidden(true)
     }
+    
     
     private func fetchUser() {
         let oauth2 = OAuthManager.shared.getClient()
@@ -77,6 +85,11 @@ struct HomeView: View {
             }
         }
         oauth2.logger = OAuth2DebugLogger(.trace)
+    }
+    
+    func logOut() {
+        OAuthManager.shared.getClient().forgetTokens()
+        presentationMode.wrappedValue.dismiss()
     }
 }
 

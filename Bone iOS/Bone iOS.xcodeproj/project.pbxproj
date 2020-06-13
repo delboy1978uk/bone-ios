@@ -18,6 +18,7 @@
 		234AC67A2440E041000D15AD /* BoneTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 234AC6792440E041000D15AD /* BoneTextField.swift */; };
 		234AC67C2440E224000D15AD /* BoneSecureField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 234AC67B2440E224000D15AD /* BoneSecureField.swift */; };
 		234AC67E2440FA50000D15AD /* AppConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = 234AC67D2440FA50000D15AD /* AppConfig.swift */; };
+		23538AC524911B67008526D1 /* UserRegistrationRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23538AC424911B67008526D1 /* UserRegistrationRequest.swift */; };
 		23592D32245C76FE00317D70 /* BoneUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23592D31245C76FE00317D70 /* BoneUser.swift */; };
 		23592D382462365B00317D70 /* BonePerson.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23592D372462365B00317D70 /* BonePerson.swift */; };
 		23599E442473CB78002B28C9 /* KeychainItemAccessibility.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23599E422473CB77002B28C9 /* KeychainItemAccessibility.swift */; };
@@ -59,6 +60,7 @@
 		234AC6792440E041000D15AD /* BoneTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BoneTextField.swift; sourceTree = "<group>"; };
 		234AC67B2440E224000D15AD /* BoneSecureField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BoneSecureField.swift; sourceTree = "<group>"; };
 		234AC67D2440FA50000D15AD /* AppConfig.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppConfig.swift; sourceTree = "<group>"; };
+		23538AC424911B67008526D1 /* UserRegistrationRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserRegistrationRequest.swift; sourceTree = "<group>"; };
 		23592D31245C76FE00317D70 /* BoneUser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BoneUser.swift; sourceTree = "<group>"; };
 		23592D372462365B00317D70 /* BonePerson.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BonePerson.swift; sourceTree = "<group>"; };
 		23599E422473CB77002B28C9 /* KeychainItemAccessibility.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KeychainItemAccessibility.swift; sourceTree = "<group>"; };
@@ -104,27 +106,28 @@
 		234AC6442440A45E000D15AD /* Bone iOS */ = {
 			isa = PBXGroup;
 			children = (
+				23FC1E572449DD170077AC76 /* ApiServices.swift */,
+				234AC67D2440FA50000D15AD /* AppConfig.swift */,
+				234AC6452440A45E000D15AD /* AppDelegate.swift */,
+				234AC64B2440A45F000D15AD /* Assets.xcassets */,
+				23592D372462365B00317D70 /* BonePerson.swift */,
+				234AC67B2440E224000D15AD /* BoneSecureField.swift */,
+				234AC6792440E041000D15AD /* BoneTextField.swift */,
+				23592D31245C76FE00317D70 /* BoneUser.swift */,
+				235EB8C92485133D0059DBBE /* ClientRegistrationRequest.swift */,
+				234AC6492440A45E000D15AD /* ContentView.swift */,
+				23CED35D2457669B00861F3B /* HomeView.swift */,
+				234AC6532440A45F000D15AD /* Info.plist */,
 				23599E422473CB77002B28C9 /* KeychainItemAccessibility.swift */,
 				23599E432473CB78002B28C9 /* KeychainWrapper.swift */,
-				23FC1E4E2449D6260077AC76 /* OAuthManager.swift */,
-				234AC6452440A45E000D15AD /* AppDelegate.swift */,
-				234AC6472440A45E000D15AD /* SceneDelegate.swift */,
-				234AC6492440A45E000D15AD /* ContentView.swift */,
-				234AC65B2440B0EE000D15AD /* SignInView.swift */,
-				234AC6592440AF92000D15AD /* RegisterView.swift */,
-				234AC64B2440A45F000D15AD /* Assets.xcassets */,
 				234AC6502440A45F000D15AD /* LaunchScreen.storyboard */,
-				234AC6532440A45F000D15AD /* Info.plist */,
-				234AC64D2440A45F000D15AD /* Preview Content */,
-				234AC6792440E041000D15AD /* BoneTextField.swift */,
-				234AC67B2440E224000D15AD /* BoneSecureField.swift */,
-				234AC67D2440FA50000D15AD /* AppConfig.swift */,
-				23FC1E572449DD170077AC76 /* ApiServices.swift */,
 				23FC1E592449DEC30077AC76 /* OAuth2RetryHandler.swift */,
-				23592D31245C76FE00317D70 /* BoneUser.swift */,
-				23CED35D2457669B00861F3B /* HomeView.swift */,
-				23592D372462365B00317D70 /* BonePerson.swift */,
-				235EB8C92485133D0059DBBE /* ClientRegistrationRequest.swift */,
+				23FC1E4E2449D6260077AC76 /* OAuthManager.swift */,
+				234AC64D2440A45F000D15AD /* Preview Content */,
+				234AC6592440AF92000D15AD /* RegisterView.swift */,
+				234AC6472440A45E000D15AD /* SceneDelegate.swift */,
+				234AC65B2440B0EE000D15AD /* SignInView.swift */,
+				23538AC424911B67008526D1 /* UserRegistrationRequest.swift */,
 			);
 			path = "Bone iOS";
 			sourceTree = "<group>";
@@ -231,6 +234,7 @@
 				234AC67E2440FA50000D15AD /* AppConfig.swift in Sources */,
 				234AC6462440A45E000D15AD /* AppDelegate.swift in Sources */,
 				234AC65A2440AF92000D15AD /* RegisterView.swift in Sources */,
+				23538AC524911B67008526D1 /* UserRegistrationRequest.swift in Sources */,
 				23FC1E5A2449DEC30077AC76 /* OAuth2RetryHandler.swift in Sources */,
 				234AC67A2440E041000D15AD /* BoneTextField.swift in Sources */,
 				23FC1E582449DD170077AC76 /* ApiServices.swift in Sources */,

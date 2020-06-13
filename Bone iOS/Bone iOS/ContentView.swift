@@ -85,6 +85,7 @@ struct ContentView: View {
                 }.hidden()
             }.background(Image("intro-bg"))
         }
+        .navigationBarBackButtonHidden(true)
         .accentColor(Color.white)
         .onAppear(perform: initialiseApp)
     }
@@ -134,7 +135,7 @@ struct ContentView: View {
 //        oauth2.logger = OAuth2DebugLogger(.trace)
         print("Authorising registration client...")
         oauth2.authorize(params: nil) { authParameters, error in
-            if let params = authParameters {
+            if authParameters != nil {
                 print("Authorized! Access token is `\(String(describing: oauth2.accessToken))`")
                 self.hasClientAccessToken = true
             }
@@ -189,7 +190,7 @@ struct ContentView: View {
 
         oauth2.logger = OAuth2DebugLogger(.trace)
         oauth2.authorize(params: nil) { authParameters, error in
-            if let params = authParameters {
+            if authParameters != nil {
                 print("Authorized! Access token is `\(String(describing: oauth2.accessToken))`")
                 self.hasUserAccessToken = true
             }

@@ -41,7 +41,7 @@ class OAuthManager {
         return false
     }
     
-    func storeClient(clientID: String, clientSecret: String) { 
+    func storeClient(clientID: String, clientSecret: String) {
         KeychainWrapper.standard.set(clientID, forKey: "client_id")
         KeychainWrapper.standard.set(clientID, forKey: "client_secret")
     }
@@ -54,6 +54,7 @@ class OAuthManager {
         print ("creating user client")
         let clientId = KeychainWrapper.standard.string(forKey: "client_id")
         let clientSecret = KeychainWrapper.standard.string(forKey: "client_secret")
+        print("user client \(clientId)")
         clientSettings["client_id"] = clientId
         clientSettings["client_secret"] = clientSecret
         OAuthManager.shared.oauth2 = OAuth2CodeGrant(settings: clientSettings as OAuth2JSON)
